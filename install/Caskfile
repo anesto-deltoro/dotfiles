@@ -1,17 +1,38 @@
 tap "homebrew/cask-fonts"
+tap "homebrew/cask-versions"
 
+# dev
+cask "corretto@8"
+cask "corretto@11"
+cask "corretto@17"
+cask "corretto@21"
 cask "docker"
-cask "proton-drive"
-cask "firefox"
-cask "font-fira-code"
-cask "font-hack"
+cask "jetbrains-toolbox"
+cask "visual-studio-code"
+cask "intellij-idea-ce"
+cask "nosqlbooster-for-mongodb" # GUI tool and IDE for MongoDB
+cask "dbeaver-community" # rdbms manager
+cask "another-redis-desktop-manager"
+cask "postman" # API development
+cask "sourcetree" # A Git GUI for visual representation of your repositories
+
+# productivity
+cask "copyq" # clipboard history
+cask "maccy" # clipboard history
+cask "hammerspoon" # powerful automation of macOS. Window management!
+cask "raycast" # Extendable launcher
+cask "iterm2" # Terminal emulator as alternative to Apple's Terminal app
+
+# Misc
+cask "slack"
+cask "spotify"
+cask "font-hack-nerd-font"
 cask "google-chrome"
 cask "google-chrome@canary"
-cask "hammerspoon"
-cask "maccy"
-cask "raycast"
-cask "slack"
-cask "sourcetree"
-cask "spotify"
-cask "visual-studio-code"
 cask "vlc"
+
+# cask "proton-drive"
+# cask "firefox"
+# cask "font-fira-code"
+# cask "font-hack"
+
