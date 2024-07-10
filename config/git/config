@@ -1,9 +1,18 @@
-[user]
-	name = Lars Kappert
-	email = lars@webpro.nl
+[includeIf "gitdir:~/dev/personal/"]
+  path=~/.config/git/config-personal
+[includeIf "gitdir:~/dev/work/"]
+  path=~/.config/git/config-mrge
 
-[github]
-	user = webpro
+[init]
+	defaultBranch = main
+
+[credential]
+	helper = osxkeychain
+
+[push]
+	autoSetupRemote = true
+	default = simple
+	followTags = true
 
 [core]
 	excludesfile = ~/.config/git/ignore
@@ -14,28 +23,6 @@
 	untrackedCache = true
 	pager = delta
 	ignorecase = false
-
-[credential]
-	helper = osxkeychain
-
-[pull]
-	rebase = true
-
-[rerere]
-	enabled = true
-
-[rebase]
-	autoStash = true
-
-[init]
-	defaultBranch = main
-
-[push]
-	default = simple
-	followTags = true
-
-[fetch]
-	prune = true
 
 [grep]
 	lineNumber = true

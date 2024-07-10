@@ -1,6 +1,14 @@
 ._*
 .DS_Store
 .idea
+*.iws
+*.iml
+*.ipr
+*.class
+.bsp/
+target/
+!**/src/main/**/target/
+!**/src/test/**/target/
 .vscode
 node_modules
 npm-debug.log
