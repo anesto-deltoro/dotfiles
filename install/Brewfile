@@ -1,50 +1,121 @@
-tap "homebrew/bundle"
-tap "lotyp/homebrew-formulae"
+tap "homebrew/bundle" # Bundler for non-Ruby dependencies from Homebrew, Homebrew Cask, Mac App Store, Whalebrew and Visual Studio Code.
+tap "lotyp/homebrew-formulae" # dock util
+tap "deviceinsight/packages" # kafkactl
 
 # core/dotfiles
-brew "bats-core"
-brew "coreutils"
-brew "duti"
-brew "lotyp/formulae/dockutil"
-brew "nano"
-brew "stow"
-brew "thefuck"
-brew "topgrade"
+brew "bats-core" # bash automated testing system
+brew "coreutils" # GNU fileutils, sh-utils, and textutils packages
+brew "duti" # select default apps for documents and URL schemes on macOS
+brew "lotyp/formulae/dockutil" # dockutil is a command line utility for managing macOS dock items
+brew "nano" # text editor
+brew "stow" # organize software under a single directory tree
+brew "thefuck" # programmatically correct mistyped console command
+brew "topgrade" #upgrade all the things
 
 # fs/network
-brew "bat"
-brew "croc"
-brew "httpie"
-brew "ssh-copy-id"
-brew "tree"
-brew "unar"
-brew "wget"
-brew "zoxide"
+brew "bat" # Clone of cat with syntax highlighting and Git integration
+brew "croc" # Securely send things from one computer to another
+brew "httpie" # User-friendly cURL replacement (command-line HTTP client)
+brew "ssh-copy-id" # Add a public key to a remote machine's authorized_keys file
+brew "tree" # Display directories as trees (with optional color/HTML output)
+brew "unar" # Command-line un-archiving tools supporting multiple formats
+brew "wget" # Internet file retriever
+brew "zoxide" # Shell extension to navigate your filesystem faster
+brew "z" # Tracks most-used directories to make cd smarter
+brew "watch" # Executes a program periodically, showing output fullscreen
 
 # search/grep/diff
-brew "fd"
-brew "fzf"
-brew "git-delta"
-brew "gnu-sed"
-brew "grep"
-brew "jq"
-brew "psgrep"
-brew "ripgrep"
-brew "the_silver_searcher"
+brew "fd" # Simple, fast and user-friendly alternative to find
+brew "fzf" # Command-line fuzzy finder written in Go
+brew "git-delta" # Syntax-highlighting pager for git and diff output
+brew "gnu-sed" # GNU implementation of the famous stream editor
+brew "grep" # GNU grep, egrep and fgrep
+brew "psgrep" # Shortcut for the 'ps aux | grep' idiom
+brew "ripgrep" # Search tool like grep and The Silver Searcher
+brew "the_silver_searcher" # Code-search similar to ack
 
 # languages/tools
-brew "gh"
-brew "n"
+brew "gh" # GitHub command-line tool
+brew "n" # Node version management
+brew "shellcheck" # Static analysis and lint tool, for (ba)sh scripts
 brew "python"
-brew "ruby"
-brew "rust"
-brew "shellcheck"
+# brew "ruby"
+# brew "rust"
 
 # media
-brew "ffmpeg"
-brew "imagemagick"
-brew "uni"
-brew "webp"
+brew "ffmpeg" # Play, record, convert, and stream audio and video
+brew "imagemagick" # Tools and libraries to manipulate images in many formats
+brew "uni" # Unicode database query tool for the command-line
+brew "webp" # Image format providing lossless and lossy compression for web images
+
+# dev/infrastructure
+# Official Amazon AWS command-line interface
+brew "awscli"
+# Kubernetes CLI To Manage Your Clusters In Style!
+brew "k9s"
+# Tool to build, change, and version infrastructure
+brew "terraform"
+# Kubernetes command line tool
+brew "kubectl"
+# Generic command-line non-JVM Apache Kafka producer and consumer
+brew "kcat"
+# A command-line interface for interaction with Apache Kafka
+brew "deviceinsight/packages/kafkactl"
+# Kubernetes cluster resource sanitizer
+brew "popeye"
+# command line tool lets you switch between different versions of terraform.
+brew "warrensbox/tap/tfswitch"
+# Run a Kubernetes cluster locally
+brew "minikube"
+# Helm charts
+brew "helm"
+
+# dev/productivity
+# Feature-rich console based todo list manager
+brew "task"
+# Simplified and community-driven man pages
+brew "tldr"
+
+# dev/tools
+# Manage your Java environment
+brew "jenv"
+# Handy way to save and run project-specific commands.
+brew "just"
+# Maven
+brew "mvn"
+
+# dev/json|yaml
+# Lightweight and flexible command-line JSON processor
+brew "jq"
+# Process YAML, JSON, XML, CSV and properties documents from the CLI
+brew "yq"
+# Make JSON greppable
+brew "gron"
+# Command-line pager for JSON data
+brew "jless"
+# A small tool to view json log files. https://github.com/brocode/fblog
+brew "fblog"
 
 # misc
+# GitHub Markdown previewer
 brew "grip"
+# Graph visualization software from AT&T and Bell Labs
+brew "graphviz"
+# Draw UML diagrams
+brew "plantuml"
+
+
+
+# To investigate
+# Template-free customization of Kubernetes YAML manifests
+#brew kustomize
+# Command-driven, interactive function plotting
+#brew "gnuplot"
+# Interactive environments for writing and running code
+#brew "jupyterlab"
+# Terminal user interface for taskwarrior
+#brew "taskwarrior-tui"
+#brew tmux
+#brew tmuxinator
+
+
