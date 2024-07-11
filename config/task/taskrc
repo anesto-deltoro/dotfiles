@@ -1,0 +1,12 @@
+news.version=3.0.0
+context.work.rd=project:work
+context.work.wr=project:work
+context.work.do=project:work
+context.private.rd=project:private
+context.private.wr=project:private
+context.private.do=project:private
+context=work
+suppress=warning
+nag=0
+color=off
+include dark-16.theme
