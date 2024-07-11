@@ -10,15 +10,19 @@ The hyper key is defined as `⌘ + ⌥ + ⌃` (control + option + command). Pres
 ## Launch Apps
 
 | Key | App                |
-| --- | ------------------ |
-| C   | Google Chrome      |
-| E   | Editor (VS Code)   |
+|-----|--------------------|
+| T   | Terminal           |
 | F   | Finder             |
-| G   | SourceTree (Git)   |
 | M   | Mail               |
 | P   | System Preferences |
-| S   | Spotify            |
-| T   | Terminal           |
+| W   | WhatsApp           |
+| N   | Notion             |
+| D   | Docker             |
+| I   | ideaIC             |
+| V   | Google Drive       |
+| C   | Google Chrome      |
+| E   | Editor (VS Code)   |
+| G   | SourceTree (Git)   |
 
 ## Window Management
 

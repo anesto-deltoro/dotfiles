@@ -24,8 +24,10 @@ cask "raycast" # Extendable launcher
 cask "iterm2" # Terminal emulator as alternative to Apple's Terminal app
 
 # Misc
+cask "notion"
+cask "whatsapp"
 cask "slack"
-cask "spotify"
+# cask "spotify"
 cask "font-hack-nerd-font"
 cask "google-chrome"
 cask "google-chrome@canary"
