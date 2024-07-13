@@ -94,13 +94,13 @@ $ dot help
 Usage: dot <command>
 
 Commands:
-   clean            Clean up caches (brew, cargo, gem, pip)
+   clean            Clean up caches (brew, pip)
    dock             Apply macOS Dock settings
    edit             Open dotfiles in IDE ($VISUAL) and Git GUI ($VISUAL_GIT)
    help             This help message
    macos            Apply macOS system defaults
    test             Run tests
-   update           Update packages and pkg managers (brew, casks, cargo, pip3, npm, gems, macOS)
+   update           Update packages and pkg managers (brew, casks, pip3, npm, macOS)
 ```
 
 ## Customize
