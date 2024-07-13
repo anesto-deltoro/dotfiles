@@ -22,6 +22,8 @@ cask "maccy" # clipboard history
 cask "hammerspoon" # powerful automation of macOS. Window management!
 cask "raycast" # Extendable launcher
 cask "iterm2" # Terminal emulator as alternative to Apple's Terminal app
+cask "pomatez"
+cask "sublime-text"
 
 # Misc
 cask "notion"
