@@ -16,7 +16,7 @@ export ACCEPT_EULA=Y
 
 all: $(OS)
 
-macos: sudo core-macos packages link duti vscode-extensions misc
+macos: sudo core-macos packages core-node link duti vscode-extensions misc
 
 linux: core-linux link
 
@@ -40,7 +40,9 @@ ifndef GITHUB_ACTION
 	while true; do sudo -n true; sleep 60; kill -0 "$$" || exit; done 2>/dev/null &
 endif
 
-packages: brew-packages cask-apps node-packages
+packages: brew-packages cask-apps
+
+core-node: npm node-packages
 
 link: stow-$(OS)
 	for FILE in $$(\ls -A runcom); do if [ -f $(HOME)/$$FILE -a ! -h $(HOME)/$$FILE ]; then \
@@ -85,9 +87,6 @@ cask-apps: brew
 	brew bundle --file=$(DOTFILES_DIR)/install/Caskfile $(BREW_OPTS) || true
 	defaults write org.hammerspoon.Hammerspoon MJConfigFile "~/.config/hammerspoon/init.lua"
 
-vscode-extensions: cask-apps
-	for EXT in $$(cat install/Codefile); do code --install-extension $$EXT; done
-
 npm: brew-packages
 	n install lts
 
@@ -97,6 +96,9 @@ node-packages: npm
 duti:
 	duti -v $(DOTFILES_DIR)/install/duti
 
+vscode-extensions: cask-apps
+	for EXT in $$(cat install/Codefile); do code --install-extension $$EXT; done
+
 # Install fzf
 fzf:
 	$(brew --prefix)/opt/fzf/install
@@ -105,19 +107,19 @@ fzf:
 oh-my-zsh:
 	sh -c "$(wget -O- https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
 
-misc: oh-my-zsh fzf
-
-cleanup:
-	brew cleanup $(BREW_OPTS)
-
 jenv:
-	jenv add  /Library/Java/JavaVirtualMachines/amazon-corretto-8.jdk/Contents/Home
-	jenv add  /Library/Java/JavaVirtualMachines/amazon-corretto-11.jdk/Contents/Home
-	jenv add  /Library/Java/JavaVirtualMachines/amazon-corretto-17.jdk/Contents/Home
-	jenv add  /Library/Java/JavaVirtualMachines/amazon-corretto-21.jdk/Contents/Home
+	jenv add /Library/Java/JavaVirtualMachines/amazon-corretto-8.jdk/Contents/Home
+	jenv add /Library/Java/JavaVirtualMachines/amazon-corretto-11.jdk/Contents/Home
+	jenv add /Library/Java/JavaVirtualMachines/amazon-corretto-17.jdk/Contents/Home
+	jenv add /Library/Java/JavaVirtualMachines/amazon-corretto-21.jdk/Contents/Home
 
 python:
 	pip3.12 install -r ./install/Pythonfile --break-system-packages
+
+misc: oh-my-zsh fzf jenv python
+
+cleanup:
+	brew cleanup $(BREW_OPTS)
 
 test:
 	bats test

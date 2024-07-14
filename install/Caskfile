@@ -26,6 +26,7 @@ cask "pomatez"
 cask "sublime-text"
 
 # Misc
+cask "google-drive"
 cask "notion"
 cask "whatsapp"
 cask "slack"

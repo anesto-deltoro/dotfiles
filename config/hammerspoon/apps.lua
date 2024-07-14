@@ -17,7 +17,7 @@ hs.hotkey.bind(mash, "w", function() toggleApplication("WhatsApp") end)
 hs.hotkey.bind(mash, "n", function() toggleApplication("Notion") end)
 hs.hotkey.bind(mash, "d", function() toggleApplication("Docker") end)
 hs.hotkey.bind(mash, "v", function() toggleApplication("Google Drive") end)
-hs.hotkey.bind(mash, "i", function() toggleApplication("ideaIC") end)
+-- hs.hotkey.bind(mash, "i", function() toggleApplication("ideaIC") end)
 
 hs.hotkey.bind(mash, "c", function() toggleApplication("Google Chrome") end)
 hs.hotkey.bind(mash, "e", function() toggleApplication("Visual Studio Code") end)

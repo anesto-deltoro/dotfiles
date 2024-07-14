@@ -2,7 +2,7 @@
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
 export XDG_CONFIG_HOME="$HOME/.config"
 export ZSH_CUSTOM=${XDG_CONFIG_HOME}/oh-my-zsh/custom
-export EDITOR='subl -w'
+export EDITOR="code"
 
 # Path to your oh-my-zsh installation.
 export ZSH="$HOME/.oh-my-zsh"
@@ -169,3 +169,5 @@ source /opt/homebrew/etc/profile.d/z.sh
 # enable auto-completion for the AWS CLI commands
 #complete -C /opt/homebrew/bin/aws_completer aws
 
+# Raise limit for open files and processes
+ulimit -S -n 8192
