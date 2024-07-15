@@ -3,6 +3,13 @@
 [includeIf "gitdir:~/dev/work/"]
   path=~/.config/git/config-mrge
 
+[user]
+	name = Anesto del Toro
+	email = anesto.deltoro@gmail.com
+
+[github]
+	user = anesto-deltoro
+	
 [init]
 	defaultBranch = main
 
