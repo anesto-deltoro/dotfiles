@@ -4,6 +4,7 @@ hs.window.animationDuration = 0
 
 function getWin()
   return hs.window.focusedWindow()
+  -- return hs.window.frontmostWindow()
 end
 
 --- arrows: move window

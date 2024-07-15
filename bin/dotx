@@ -4,6 +4,7 @@ BIN_NAME=$(basename "$0")
 COMMAND_NAME=$1
 SUB_COMMAND_NAME=$2
 
+
 sub_help () {
   echo "Usage: $BIN_NAME <command>"
   echo
@@ -51,6 +52,7 @@ sub_macos () {
 case $COMMAND_NAME in
   "" | "-h" | "--help")
     sub_help
+    echo $DOTFILES_DIR
     ;;
   *)
     shift

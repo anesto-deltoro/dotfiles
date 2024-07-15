@@ -1,9 +1,9 @@
 # If you come from bash you might have to change your $PATH.
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
-export XDG_CONFIG_HOME="$HOME/.config"
-export ZSH_CUSTOM=${XDG_CONFIG_HOME}/oh-my-zsh/custom
-export EDITOR="code"
+export XDG_CONFIG_HOME="$HOME/.config" 
+source ${XDG_CONFIG_HOME}/oh-my-zsh/.env
 
+export ZSH_CUSTOM=${XDG_CONFIG_HOME}/oh-my-zsh/custom
 # Path to your oh-my-zsh installation.
 export ZSH="$HOME/.oh-my-zsh"
 
@@ -91,25 +91,21 @@ plugins=(
 	kube-ps1
 )
 
-source $ZSH/oh-my-zsh.sh
-
 custom_plugins=(
     ktools
     adta-aliases
+    adta-aliases-macos
     kafka
     databases
     mrge
 )
 for p in "${custom_plugins[@]}"
 do
-    source "$ZSH/custom/plugins/$p/$p.plugin.zsh"
+    source "$ZSH_CUSTOM/plugins/$p/$p.plugin.zsh"
 done
 
-# User configuration
-export MANPATH="/usr/local/man:$MANPATH"
+source $ZSH/oh-my-zsh.sh
 
-# Language environment might require manual setup
-export LANG=en_US.UTF-8
 
 # Compilation flags
 # export ARCHFLAGS="-arch x86_64"
@@ -130,9 +126,8 @@ alias dotfile="idea ~/.dotfiles"
 # unset JAVA_HOME
 # unset JDK_HOME
 
-export PATH="$HOME/.jenv/bin:$PATH"
 eval "$(jenv init -)"
-jenv enable-plugin export
+# jenv enable-plugin export
 
 #### Setup fzf
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
@@ -154,8 +149,8 @@ autoload -Uz compinit && compinit
 # source "/opt/homebrew/opt/kube-ps1/share/kube-ps1.sh"
 PS1='['$'\U2615''$(jenv_prompt_info)]$(kube_ps1)'$PS1
 # PROMPT='$(kube_ps1)'$PROMPT
+# RPROMPT='$(jenv_prompt_info)'
 
-export PATH="/Users/anestodta/bin:$PATH"
 
 # with alias-finder plugin
 zstyle ':omz:plugins:alias-finder' autoload yes # disabled by default

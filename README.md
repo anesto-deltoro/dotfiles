@@ -87,11 +87,15 @@ dot macos
 touch ~/.dotfiles/system/.exports
 ```
 
-## The `dot` command
+## The `dotx` command
 
 ```
-$ dot help
-Usage: dot <command>
+Ensure 
+export DOTFILES_DIR="$HOME/.dotfiles"
+export PATH="$DOTFILES_DIR/bin:$PATH"
+
+$ dotx help
+Usage: dotx <command>
 
 Commands:
    clean            Clean up caches (brew, pip)

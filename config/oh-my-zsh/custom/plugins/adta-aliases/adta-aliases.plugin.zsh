@@ -2,6 +2,22 @@
 # and then simplified and modified to my needs.
 # Unused alias are commented out.
 
+# Base Aliases
+# Shortcuts
+alias reload="source ~/.zshrc"
+# List declared aliases, functions, paths
+alias aliases="alias | sed 's/=.*//'"
+alias paths='echo -e ${PATH//:/\\n}'
+# Network
+alias ip="curl -s ipinfo.io | jq -r '.ip'"
+alias ipl="ifconfig | grep -Eo 'inet (addr:)?([0-9]*\.){3}[0-9]*' | grep -Eo '([0-9]*\.){3}[0-9]*' | grep -v '127.0.0.1'"
+# Miscellaneous
+alias hosts="sudo $EDITOR /etc/hosts"
+alias quit="exit"
+alias week="date +%V"
+alias speedtest="wget -O /dev/null http://speed.transip.nl/100mb.bin"
+alias grip="grip --browser --pass=$GITHUB_TOKEN"
+
 # Core Aliases.
 #
 alias rm='rm -i'
@@ -24,20 +40,20 @@ alias quick-clean="find . -name target -exec rm -rf {} \;" # find and delete all
 
 # Java
 # -
-alias j21="export JAVA_HOME=`/usr/libexec/java_home -v 21`; java -version"
+alias j21="jenv local 21; export JAVA_HOME=`/usr/libexec/java_home -v 21`; java -version"
 # alias j20="export JAVA_HOME=`/usr/libexec/java_home -v 20`; java -version"
 # alias j19="export JAVA_HOME=`/usr/libexec/java_home -v 19`; java -version"
 # alias j18="export JAVA_HOME=`/usr/libexec/java_home -v 18`; java -version"
-alias j17="export JAVA_HOME=`/usr/libexec/java_home -v 17`; java -version"
+alias j17="jenv local 17; export JAVA_HOME=`/usr/libexec/java_home -v 17`; java -version"
 # alias j16="export JAVA_HOME=`/usr/libexec/java_home -v 16`; java -version"
 # alias j15="export JAVA_HOME=`/usr/libexec/java_home -v 15`; java -version"
 # alias j14="export JAVA_HOME=`/usr/libexec/java_home -v 14`; java -version"
 # alias j13="export JAVA_HOME=`/usr/libexec/java_home -v 13`; java -version"
 # alias j12="export JAVA_HOME=`/usr/libexec/java_home -v 12`; java -version"
-alias j11="export JAVA_HOME=`/usr/libexec/java_home -v 11`; java -version"
+alias j11="jenv local 11; export JAVA_HOME=`/usr/libexec/java_home -v 11`; java -version"
 # alias j10="export JAVA_HOME=`/usr/libexec/java_home -v 10`; java -version"
 # alias j9="export JAVA_HOME=`/usr/libexec/java_home -v 9`; java -version"
-alias j8="export JAVA_HOME=`/usr/libexec/java_home -v 1.8`; java -version"
+alias j8="jenv local 1.8; export JAVA_HOME=`/usr/libexec/java_home -v 1.8`; java -version"
 # alias j7="export JAVA_HOME=`/usr/libexec/java_home -v 1.7`; java -version"
 
 # Grep aliases and functions

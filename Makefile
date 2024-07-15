@@ -101,6 +101,7 @@ vscode-extensions: cask-apps
 
 # Install fzf
 fzf:
+	eval "$(/opt/homebrew/bin/brew shellenv)"
 	$(brew --prefix)/opt/fzf/install
 
 # Install oh-my-zsh
@@ -108,10 +109,10 @@ oh-my-zsh:
 	sh -c "$(wget -O- https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
 
 jenv:
-	jenv add /Library/Java/JavaVirtualMachines/amazon-corretto-8.jdk/Contents/Home
-	jenv add /Library/Java/JavaVirtualMachines/amazon-corretto-11.jdk/Contents/Home
-	jenv add /Library/Java/JavaVirtualMachines/amazon-corretto-17.jdk/Contents/Home
-	jenv add /Library/Java/JavaVirtualMachines/amazon-corretto-21.jdk/Contents/Home
+	#jenv add /Library/Java/JavaVirtualMachines/amazon-corretto-8.jdk/Contents/Home
+	#jenv add /Library/Java/JavaVirtualMachines/amazon-corretto-11.jdk/Contents/Home
+	#jenv add /Library/Java/JavaVirtualMachines/amazon-corretto-17.jdk/Contents/Home
+	#jenv add /Library/Java/JavaVirtualMachines/amazon-corretto-21.jdk/Contents/Home
 
 python:
 	pip3.12 install -r ./install/Pythonfile --break-system-packages

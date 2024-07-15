@@ -1,7 +1,7 @@
 tap "homebrew/bundle" # Bundler for non-Ruby dependencies from Homebrew, Homebrew Cask, Mac App Store, Whalebrew and Visual Studio Code.
 tap "lotyp/homebrew-formulae" # dock util
 tap "deviceinsight/packages" # kafkactl
-
+    
 # core/dotfiles
 brew "bats-core" # bash automated testing system
 brew "coreutils" # GNU fileutils, sh-utils, and textutils packages
