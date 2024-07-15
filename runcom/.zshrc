@@ -95,6 +95,7 @@ custom_plugins=(
     ktools
     adta-aliases
     adta-aliases-macos
+    functions
     kafka
     databases
     mrge
@@ -147,9 +148,11 @@ autoload -Uz compinit && compinit
 
 ### kubernetes (kube_ps1)
 # source "/opt/homebrew/opt/kube-ps1/share/kube-ps1.sh"
-PS1='['$'\U2615''$(jenv_prompt_info)]$(kube_ps1)'$PS1
+PS1='$(kube_ps1)'$PS1
+#PS1='['$'\U2615''$(jenv_prompt_info)]$(kube_ps1)'$PS1
 # PROMPT='$(kube_ps1)'$PROMPT
 # RPROMPT='$(jenv_prompt_info)'
+RPROMPT='['$'\U2615''$(jenv_prompt_info)]'
 
 
 # with alias-finder plugin

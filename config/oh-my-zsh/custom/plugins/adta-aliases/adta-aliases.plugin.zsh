@@ -352,7 +352,7 @@ zstyle -e ':completion:*:(ssh|scp|sftp|rsh|rsync):hosts' hosts 'reply=(${=${${(f
 
 
 ### tmux: from Nacho, TO DEEP DIVE!
-alias t='tmux'
+alias tx='tmux'
 alias tl='tmux list-sessions' # list tmux sessions
 #alias tk='tmux kill-session -t' # kill tmux session with name
 alias td='tmux detach' # detach from tmux session
