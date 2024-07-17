@@ -222,19 +222,19 @@ jc() {
 #
 alias tw='task '
 alias twl='task list '
-alias twx='task done '
 alias twa='task add '
 alias tws='task start '
-alias twss='task stop '
-alias twe='task edit '
-alias twp='task project '
-alias twt='task tag '
-alias twd='task delete '
 alias twc='task context '
 alias twr='task report '
+alias twu='usage_tw'
 alias twsm='task summary '
-alias twaa='task annotate '
-alias twu='usage_taskwarrior_aliases'
+#alias twx='task done '
+#alias twss='task stop '
+#alias twe='task edit '
+#alias twp='task project '
+#alias twt='task tag '
+#alias twd='task delete '
+# alias twaa='task annotate '
 
 # active each context
 alias twcs='task context show'
@@ -242,43 +242,6 @@ alias twcs='task context study'
 alias twch='task context home'
 alias twcw='task context work'
 alias twcn='task context none' # deactive
-
-# taskwarrior select a task to start
-twsel() {
-  local task
-  task=$(task list | fzf --height 40% --reverse --border --prompt="select task: " | awk '{print $1}')
-  if [ -n "$task" ]; then
-    echo "task start $task"
-    task start "$task"
-  fi
-}
-
-function usage_taskwarrior_aliases() {
-  cat <<EOF
-  tw - task
-  twaa - task annotate
-  twl - list tasks
-  twx - done task
-  twa - add task
-  tws - start task
-  twss - stop task
-  twe - edit task
-  twp - project task
-  twt - tag task
-  twd - delete task
-  twc - context task
-  twr - report task
-  twsm - summary task
-
-  twcs - context study
-  twch - context home
-  twcw - context work
-  twcn - context none
-  twcd - context show
-
-  twsel - select a task to start
-EOF
-}
 
 # find an alias with fzf, and execute
 af() {

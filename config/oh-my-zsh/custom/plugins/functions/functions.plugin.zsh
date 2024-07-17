@@ -101,3 +101,56 @@ duplines() {
 uniqlines() {
   sort $1 | uniq -u
 }
+
+# Task warrior
+
+# taskwarrior select a task to start
+twsel() {
+  local task
+  task=$(task list | fzf --height 40% --reverse --border --prompt="select task: " | awk '{print $1}')
+  if [ -n "$task" ]; then
+    echo "task start $task"
+    task start "$task"
+  fi
+}
+
+# taskwarrior select active task to mask as done
+twdone() {
+  local task
+  task=$(task list | fzf --height 40% --reverse --border --prompt="select task: " | awk '{print $1}')
+  if [ -n "$task" ]; then
+    echo "task start $task"
+    task done "$task"
+  fi
+}
+
+function usage_tw() {
+  cat <<EOF
+  tw - task
+  twl - list tasks
+  twa - add task
+  twc - context task
+  twsm - summary task
+  
+  twsel - select a task to start
+  twdone - select a task to done
+
+  twcs - context study
+  twch - context home
+  twcw - context work
+  twcn - context none
+  twcd - context show
+
+  # Not used/to investigate later
+  twaa - task annotate
+  twx - done task
+  tws - start task
+  twss - stop task
+  twe - edit task
+  twp - project task
+  twt - tag task
+  twd - delete task
+  twr - report task
+
+EOF
+}
