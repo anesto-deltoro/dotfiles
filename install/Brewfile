@@ -1,6 +1,7 @@
 tap "homebrew/bundle" # Bundler for non-Ruby dependencies from Homebrew, Homebrew Cask, Mac App Store, Whalebrew and Visual Studio Code.
 tap "lotyp/homebrew-formulae" # dock util
 tap "deviceinsight/packages" # kafkactl
+tap "anchore/grype" # kafkactl
     
 # core/dotfiles
 brew "bats-core" # bash automated testing system
@@ -83,6 +84,10 @@ brew "jenv"
 brew "just"
 # Maven
 brew "mvn"
+# Scan java codebases and container images to scan for vulnerabilities
+brew "grype"
+# postgres16 for local client
+brew "postgresql@16"
 
 # dev/json|yaml
 # Lightweight and flexible command-line JSON processor
