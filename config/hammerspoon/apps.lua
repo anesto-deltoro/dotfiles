@@ -16,7 +16,7 @@ hs.hotkey.bind(mash, "p", function() toggleApplication("System Preferences") end
 hs.hotkey.bind(mash, "w", function() toggleApplication("WhatsApp") end)
 hs.hotkey.bind(mash, "n", function() toggleApplication("Notion") end)
 hs.hotkey.bind(mash, "s", function() toggleApplication("Slack") end)
-hs.hotkey.bind(mash, "j", function() toggleApplication("IntelliJ IDEA CE") end)
+hs.hotkey.bind(mash, "z", function() toggleApplication("IntelliJ IDEA CE") end)
 hs.hotkey.bind(mash, "d", function() toggleApplication("Docker") end)
 hs.hotkey.bind(mash, "v", function() toggleApplication("Google Drive") end)
 
