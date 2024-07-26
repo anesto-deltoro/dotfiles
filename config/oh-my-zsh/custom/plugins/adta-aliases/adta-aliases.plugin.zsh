@@ -80,6 +80,11 @@ alias devgrep='grep -R -n -H -C 5 --exclude-dir={.git,.svn,CVS,target,.idea} '
 alias -s java='idea'  # open java file with idea
 alias -s scala='idea' # open scala file with idea
 
+## Java Dev
+alias gr=./gradlew bootRun
+alias gt=./gradlew test
+alias gbi=./gradlew bootBuildImage
+
 # Git
 # -
 # Revert last commit and keep changes locally
@@ -126,6 +131,11 @@ gsq2() {
 # Docker alias and function #
 # ------------------------- #
 
+dkrr() {
+  name=$(echo "$1" | cut -d ":" -f 1)
+  docker run --rm --name $name -p$2:$2 --platform linux/amd64 $1
+}
+
 # Get latest container ID
 alias dl="docker ps -l -q"
 # List running containers (formatted)
@@ -137,7 +147,7 @@ dktop() {
   docker stats --format "table {{.Container}}\t{{.Name}}\t{{.CPUPerc}}  {{.MemPerc}}\t{{.NetIO}}\t{{.BlockIO}}"
 }
 # Get images
-alias dki="docker images"
+alias dkim="docker images"
 # Run interactive container, e.g., $dki base /bin/bash
 alias dki="docker run -i -t -P"
 # Execute interactive container, e.g., $dex base /bin/bash

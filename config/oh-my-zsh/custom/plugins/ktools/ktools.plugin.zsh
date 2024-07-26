@@ -117,3 +117,9 @@ ktools_help() {
 help_ktools() {
   man_ktools
 }
+
+
+### Minikube management
+
+alias mkon=minikube start
+alias mkoff=minikube stop

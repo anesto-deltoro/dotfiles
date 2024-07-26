@@ -4,6 +4,13 @@ mk() {
   mkdir -p "$@" && cd "$@"
 }
 
+# Get named var (usage: get "VAR_NAME") Using Parameter Expansion Safely
+
+get() {
+  var_name="$1"
+  eval "echo \$$var_name"
+}
+
 # Check if resource is served compressed
 
 check_compression() {
