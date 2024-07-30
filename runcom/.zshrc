@@ -75,7 +75,7 @@ HIST_STAMPS="yyyy-mm-dd"
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
 plugins=(
-#   git
+  git
   alias-finder
 	docker
   docker-compose
@@ -93,6 +93,7 @@ plugins=(
 
 custom_plugins=(
     ktools
+    dev-zone
     adta-aliases
     adta-aliases-macos
     functions
