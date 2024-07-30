@@ -9,6 +9,7 @@ local function toggleApplication(name)
   end
 end
 
+hs.hotkey.bind(mash, "c", function() toggleApplication("Visual Studio Code") end)
 hs.hotkey.bind(mash, "t", function() toggleApplication("Terminal") end)
 hs.hotkey.bind(mash, "f", function() toggleApplication("Finder") end)
 hs.hotkey.bind(mash, "m", function() toggleApplication("Mail") end)
@@ -20,6 +21,5 @@ hs.hotkey.bind(mash, "z", function() toggleApplication("IntelliJ IDEA CE") end)
 hs.hotkey.bind(mash, "d", function() toggleApplication("Docker") end)
 hs.hotkey.bind(mash, "v", function() toggleApplication("Google Drive") end)
 
-hs.hotkey.bind(mash, "c", function() toggleApplication("Google Chrome") end)
-hs.hotkey.bind(mash, "e", function() toggleApplication("Visual Studio Code") end)
+hs.hotkey.bind(mash, "e", function() toggleApplication("Google Chrome") end)
 hs.hotkey.bind(mash, "g", function() toggleApplication("SourceTree") end)
