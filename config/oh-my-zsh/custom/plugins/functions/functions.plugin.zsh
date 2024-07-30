@@ -4,6 +4,29 @@ mk() {
   mkdir -p "$@" && cd "$@"
 }
 
+# Delete all contents of a specified folder
+rdi() {
+  folder_name="$1"
+
+  # Check if the folder exists
+  if [ ! -d "$folder_name" ]; then
+    echo "The specified folder does not exist."
+    return 1
+  fi
+
+  # Request confirmation from the user
+  echo -n "Are you sure you want to delete all contents of the folder '$folder_name'? (yes/no): "
+  read confirmation
+
+  if [ "$confirmation" = "yes" ]; then
+    # Delete folder and all contents recursively
+    rm -rf "${folder_name:?}"
+    echo "All contents of the folder '$folder_name' have been deleted."
+  else
+    echo "Operation cancelled."
+  fi
+}
+
 # Get named var (usage: get "VAR_NAME") Using Parameter Expansion Safely
 
 get() {
@@ -160,4 +183,15 @@ function usage_tw() {
   twr - report task
 
 EOF
+}
+
+# Java development
+
+uoi(){
+  unzip $1
+  rm $1
+  local xx
+  xx=$(echo $1 | cut -d "." -f 1)
+  cd "$xx"
+  idea .
 }
