@@ -108,11 +108,17 @@ fzf:
 oh-my-zsh:
 	sh -c "$(wget -O- https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
 
+# Install just spring
+oh-my-zsh:
+	sh -c "$(curl -Lo just.zip https://github.com/maciejwalkowiak/just/releases/latest/download/just-0.14.0-osx-x86_64.zip && unzip just.zip && rm just.zip && chmod +x just && sudo mv just /usr/local/bin/spring-just)"
+
+
 jenv:
 	#jenv add /Library/Java/JavaVirtualMachines/amazon-corretto-8.jdk/Contents/Home
 	#jenv add /Library/Java/JavaVirtualMachines/amazon-corretto-11.jdk/Contents/Home
 	#jenv add /Library/Java/JavaVirtualMachines/amazon-corretto-17.jdk/Contents/Home
 	#jenv add /Library/Java/JavaVirtualMachines/amazon-corretto-21.jdk/Contents/Home
+	#jenv add /Library/Java/JavaVirtualMachines/temurin-22.jdk/Contents/Home/
 
 python:
 	pip3.12 install -r ./install/Pythonfile --break-system-packages
