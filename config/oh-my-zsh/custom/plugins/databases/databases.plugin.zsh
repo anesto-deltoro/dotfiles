@@ -4,20 +4,6 @@ function db_help() {
   @echo "tips: leverage: variables (keep host/tunnel and parameters), fzf (easy find strings), tmux (keep session in background e.g.), .pgpass (store password for pg), etc"
 }
 
-
-# pghelp(){
-#   cat << 'EOF'
-#   List all databases - \l
-#   Switch to another database - \c 
-#   List database tables - \dt 
-#   Describe a table - \d <table>
-#   List all schemas - \dn
-#   List users and their roles - \du
-#   Retrieve a specific user - \du <user> 
-Quit psql - \q
-# EOF  
-# }
-
 pghelp() {
   cat << 'EOF'
   Commands \?
@@ -51,13 +37,17 @@ EOF
 }
 
 pgup(){
-  docker compose -f ~/dev/docker/pg/docker-compose.yaml up -d
+  docker compose -f ~/dev/docker/pg/docker-compose-$1.yaml up -d
 }
 
 pgdown(){
-  docker compose -f ~/dev/docker/pg/docker-compose.yaml down
+  docker compose -f ~/dev/docker/pg/docker-compose-$1.yaml down
 }
 
-pgcli(){
+pgcli0(){
   PGPASSWORD=postgres psql -U postgres -h localhost postgres
+}
+
+pgcli1(){
+  PGPASSWORD=secret psql -U user -h localhost db
 }
