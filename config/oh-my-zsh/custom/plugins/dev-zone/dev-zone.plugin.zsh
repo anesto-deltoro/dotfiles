@@ -11,12 +11,27 @@ alias -s json='code' # open json file with vscode
 
 # Java Dev
 # -
+alias grcb="./gradlew clean build"
 alias grr="./gradlew bootRun"
 alias grj="./gradlew bootJar"
 alias grtst="./gradlew test"
 alias gri="./gradlew bootBuildImage"
 
 alias mr="./mvnw spring-boot:run"
+
+grr-jar(){
+    profile=$1
+    ./gradlew bootJar
+    appName=$(cat settings.gradle | grep 'rootProject.name =' | cut -d "=" -f 2 | tr -d '[:blank:]' | tr -d "\'")
+    version=$(cat build.gradle | grep 'version =' | cut -d "=" -f 2 | tr -d '[:blank:]' | tr -d "\'")
+    java -jar build/libs/$appName-$version.jar --spring.profiles.active=$profile
+}
+
+arefresh(){
+    let port=$1
+    http POST :$port/actuator/refresh
+}
+
 
 # Java
 # -

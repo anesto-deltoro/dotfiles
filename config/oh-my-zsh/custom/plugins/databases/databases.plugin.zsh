@@ -51,3 +51,7 @@ pgcli0(){
 pgcli1(){
   PGPASSWORD=secret psql -U user -h localhost db
 }
+
+pgcli(){
+  PGPASSWORD=secret psql -U user -h localhost $1
+}
